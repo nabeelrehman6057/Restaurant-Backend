@@ -5,7 +5,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 import reservationRouter from "./routes/reservationRoute.js";
 import { dbConnection } from "./database/dbConnection.js";
 import  contactRouter  from "./routes/contactRoute.js";
-import adminRouter from "./routes/adminRoute.js";
+
 
 const app = express();
 
@@ -22,7 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1/reservation", reservationRouter);
 app.use("/api/v1/contact", contactRouter);
-app.use("/api/v1/admin", adminRouter);
 app.get("/", (req, res, next)=>{return res.status(200).json({
   success: true,
   message: "HELLO WORLD AGAIN"
